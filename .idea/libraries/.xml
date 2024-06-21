@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="업데이트">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dump_240611.zip!/" />
+      <root url="jar://$PROJECT_DIR$/main_240611.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

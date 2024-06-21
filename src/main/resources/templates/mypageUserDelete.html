@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleMypage.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LMS</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  </head>
+<body>
+  <div class="container">
+    <div id="header"></div>
+    <div class="root">
+      <div class="sideMenu">
+        <div class="title">마이페이지</div>
+          <div class="sideBtn" id = "sideBtnUserInfo"><a href="mypage.html">회원정보</a></div>
+          <div class="sideBtn" id = "sideBtnUserLecture"><a href="mypageLecture.html">나의학습</a></div>
+          <div class="sideBtn" style="background-color: steelblue; border: 2px solid white;" 
+          id = "sideBtnUserDelete"><a style="color: white;" href="mypageUserDelete.html">회원탈퇴</a></div>
+      </div>
+    <div class="userDelete-box"> <!-- ------------------------------------회원탈퇴------------------------------------ -->
+
+      <h2 class="userDeleteBoxTitle">회원탈퇴</h2>
+        <div class="userDeleteContainer">
+        <table class="delete-table">
+          <div class="userDeleteNotice1">현재 운영 중인 수강 과목에 대해서는 자동 수강 취소되며, 이수한 과목의 수료증 출력이 불가능합니다.</div>
+          <div class="userDeleteNotice2">※ STEP 탈퇴 시 모든 훈련기관에서 탈퇴되며, 동일 아이디로 재가입할 수 없습니다.</div>
+          <thead>
+            <colgroup>
+              <col style="width: 20%;">
+              <col style="width: 30%;">
+              <col style="width: 35%;">
+              <col style="width: 15%;">
+            </colgroup>
+            <tr class="deleteList deleteList1">
+              <th>아이디</th>
+              <th>훈련기관명</th>
+              <th>가입일</th>
+              <th>탈퇴 확인</th>
+            </tr>
+            <tr class="deleteList deleteList2">
+              <th class="deleteUserId"></th>
+              <th class="deleteOffice"></th>
+              <th class="deleteJoinDate"></th>
+              <th class="deleteSelect"><input class="deleteSelectBox" type="checkbox"></th>
+            </tr>
+          </thead>
+        </table>
+        <h2 class="userDeleteReasonTitle">탈퇴사유</h2>
+        <div class="userDeleteReasonBox">
+          <textarea id="userDeleteReason" rows="3" placeholder="탈퇴 사유를 입력해주세요" oninput="handleResizeHeight()"></textarea>
+        </div>
+        <div class="userDeleteBtn">회원탈퇴</div>
+      </div>
+          
+    </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+  <script src="/js/mypageUserDelete.js"></script>
+</body>
+</html>

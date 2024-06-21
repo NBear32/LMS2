@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleMypage.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LMS</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  </head>
+<body>
+  <div class="container">
+    <div id="header"></div>
+    <div class="root">
+      <div class="sideMenu">
+        <div class="title">마이페이지</div>
+        <div class="sideBtn" id = "sideBtnUserInfo"><a href="mypage.html">회원정보</a></div>
+        <div class="sideBtn" style="background-color: steelblue; border: 2px solid white;"
+        id = "sideBtnUserLecture"><a style="color: white;" href="mypageLecture.html">나의학습</a></div>
+        <div class="sideBtn" id = "sideBtnUserDelete"><a href="mypageUserDelete.html">회원탈퇴</a></div>
+    </div>
+
+    <div class="userLecture-box">
+
+      <h2 class="userLectureBoxTitle">나의학습</h2>
+
+      <div class="lectureMenuBox">
+        <div class="lecturemenu" id="lecturemenu1">요약정보<a href=#></a></div>
+        <div class="lecturemenu" id="lecturemenu2">학습중<a href=#></a></div>
+        <div class="lecturemenu" id="lecturemenu3">수강취소<a href=#></a></div>
+        <div class="lecturemenu" id="lecturemenu4">수강종료<a href=#></a></div>
+      </div>
+        
+      <div class="userLectureGraphContainer"> <!-- ------------------------------------요약정보------------------------------------ -->
+          <div class="userLectureGraph">
+            <div class="userLectureGraphGraduations">
+
+              <!-- 그래프 눈금 -->
+              <ul class="graphY-axis">
+                <li id="edgeY-axis"><span>10</span></li>
+                <li><span>9</span></li>
+                <li><span>8</span></li>
+                <li><span>7</span></li>
+                <li><span>6</span></li>
+                <li><span>5</span></li>
+                <li><span>4</span></li>
+                <li><span>3</span></li>
+                <li><span>2</span></li>
+                <li><span>1</span></li>
+                <li id="edgeY-axis">
+                  <span>0</span>
+                </li>
+              </ul>
+
+              <!-- 그래프 바 -->
+              <ul class="graphBar">
+                <li><div id = "classGraphBar1"><div class="graphNumBottom"></div><div class="graphNum graphNum1"></div></div></li>
+                <li><div id = "classGraphBar2"><div class="graphNumBottom"></div><div class="graphNum graphNum2"></div></div></li>
+                <li><div id = "classGraphBar3"><div class="graphNumBottom"></div><div class="graphNum graphNum3"></div></div></li>
+                <li><div id = "classGraphBar4"><div class="graphNumBottom"></div><div class="graphNum graphNum4"></div></div></li>
+                <li><div id = "classGraphBar5"><div class="graphNumBottom"></div><div class="graphNum graphNum5"></div></div></li>
+                <li><div id = "classGraphBar6"><div class="graphNumBottom"></div><div class="graphNum graphNum6"></div></div></li>
+                <li><div id = "classGraphBar7"><div class="graphNumBottom"></div><div class="graphNum graphNum7"></div></div></li>
+              </ul>
+
+              <!-- 그래프 목록 -->
+              <ul class="graphX-axis">
+                <li><div>수강신청</div></li>
+                <li><div>수강대기</div></li>
+                <li><div>수강반려</div></li>
+                <li><div>학습중</div></li>
+                <li><div>수료처리중</div></li>
+                <li><div>수료</div></li>
+                <li><div>미수료</divn></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+
+      <div class="userLectureStudyingContainer hidden"> <!-- ------------------------------------학습중------------------------------------ -->
+        <div class="studyingList">
+          <table class="studying-table">
+            <thead>
+              <colgroup>
+                <col style="width: 12%;">
+                <col style="width: 38%;">
+                <col style="width: 25%;">
+                <col style="width: 15%;">
+                <col style="width: 10%;">
+              </colgroup>
+              <tr class="lecTableList">
+                <th colspan="2">
+                    강의제목</th>
+                <th>교육기간</th>
+                <th>진도율</th>
+                <th><a href=#>강의실</a></th>
+              </tr>
+            </thead>
+            <tbody class="studying-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="userLectureCancelContainer hidden"> <!-- ------------------------------------강의취소------------------------------------ -->
+        <div class="cancelList">
+          <table class="cancel-table">
+            <thead>
+              <colgroup>
+                <col style="width: 12%;">
+                <col style="width: 38%;">
+                <col style="width: 25%;">
+                <col style="width: 15%;">
+                <col style="width: 10%;">
+              </colgroup>
+              <tr class="lecCancelList">
+                <th colspan="2">
+                    강의제목</th>
+                <th>교육기간</th>
+                <th>수강신청일</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody class="cancel-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="userLectureCompleteContainer hidden"> <!-- ------------------------------------강의완료------------------------------------ -->
+        <div class="completelList">
+          <table class="complete-table">
+            <thead>
+              <colgroup>
+                <col style="width: 12%;">
+                <col style="width: 38%;">
+                <col style="width: 25%;">
+                <col style="width: 7%;">
+                <col style="width: 8%;">
+                <col style="width: 10%;">
+              </colgroup>
+              <tr class="lecCompleteList">
+                <th colspan="2">
+                    강의제목</th>
+                <th>교육기간</th>
+                <th>성적</th>
+                <th>수료</th>
+                <th>리뷰</th>
+              </tr>
+            </thead>
+            <tbody class="complete-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+  <script src="/js/mypageLecture.js"></script>
+</body>
+</html>

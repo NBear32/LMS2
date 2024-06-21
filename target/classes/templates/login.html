@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- Google 폰트 => Poppins Embed code 사용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LMS</title>
+    <!-- header 에 넣는 이유는 body 에서 사용해야 되기 때문에 미리 로드해야 함 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  </head>
+  <div class="root">
+  <body>
+    <!-- Box 먼저 만듦 -->
+    <div class="container">
+      <div id="header"></div>
+      <div class="title">
+        <h1>Learning Management System</h1>
+      </div>
+      <div class="menu">
+        <!-- <button>TEST</button> => 보통 사용하지 않음 -->
+        <div><a href="index.html">HOME</a></div>
+        <div><a href="mypage.html">MY PAGE</a></div>
+        <div><a href="login.html">LOGIN</a></div>
+        <div><a href="cart.html">CART</a></div>
+      </div>
+      <div class="login">
+        <div class="login-box">
+          <label>User ID</label>
+          <input type="text" id="userID" />
+          <label>Password</label>
+          <input type="password" id="password" />
+          <div></div>
+          <div class="loginBtn">Login</div>
+          <!-- <button onclick="sessionCurrent()">세션확인</button> -->
+          <button class="signupBtn">회원가입</button>
+        </div>
+
+        <div class="user-box hidden">
+          <p></p>
+          <div class="logoutBtn">Logout</div>
+        </div>
+
+        <div class="signup-box hidden">
+          <label>User ID</label>
+          <input type="text" id="signupUserID" />
+          <label>Password</label>
+          <input type="password" id="signupPassword" />
+          <label>User Name</label>
+          <input type="text" id="signupUserName" />
+          <label>Email</label>
+          <input type="email" id="signupEmail" />
+          <div class="button-box">
+            <div class="registrationBtn">회원등록</div>
+            <div class="registrationCloseBtn">닫기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div id="footer"></div>
+    </div>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

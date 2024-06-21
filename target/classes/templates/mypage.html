@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styleMypage.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LMS</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  </head>
+<body>
+  <div class="container">
+    <div id="header"></div>
+    <div class="root">
+      <div class="sideMenu">
+        <div class="title">마이페이지</div>
+        <div class="sideBtn" id = "sideBtnUserInfo" style="background-color: steelblue; border: 2px solid white;">
+          <a style="color: white;" href="mypage.html">회원정보</a></div>
+        <div class="sideBtn" id = "sideBtnUserLecture"><a href="mypageLecture.html">나의학습</a></div>
+        <div class="sideBtn" id = "sideBtnUserDelete"><a href="mypageUserDelete.html">회원탈퇴</a></div>
+      </div>
+    <div class="userInfo-box"> <!-- ------------------------------------회원정보------------------------------------ -->
+
+      <h2 class="userInfoBoxTitle">회원정보</h2>
+      <div class="userGridContainer"> <!-- ------------------------------------회원정보------------------------------------ -->
+        <div class="userGrid userGrid1">아이디</div>
+        <div class="userGrid userGrid2">
+          <div class="idGrid"></div>
+        </div>
+        <div class="userGrid userGrid3">성명(한글)</div>
+        <div class="userGrid userGrid4">
+          <div class="nameGrid"></div>
+        </div>
+        <div class="userGrid userGrid5">성별</div>
+        <div class="userGrid userGrid6">
+          <div class="genderGrid"></div>
+        </div>
+        <div class="userGrid userGrid7">성명(영어)</div>
+        <div class="userGrid userGrid8"> <input class="engNameGrid2 hidden"></input>
+          <div class="engNameGrid"></div></div>
+        <div class="userGrid userGrid9">생년월일</div>
+        <div class="userGrid userGrid10">
+          <div class="birthGrid"></div>
+        </div>
+        <div class="userGrid userGrid11">이메일</div>
+        <div class="userGrid userGrid12"><input class="emailGrid2 hidden"></input>
+          <div class="emailGrid"></div></div>
+        <div class="userGrid userGrid13">휴대전화</div>
+        <div class="userGrid userGrid14"><input class="hpTelGrid2 hidden"></input>
+          <div class="hpTelGrid"></div></div>
+        <div class="userGrid userGrid15">학력</div>
+        <div class="userGrid userGrid16"><input class="lectureGrid2 hidden"></input>
+          <div class="lectureGrid"></div></div>
+        <div class="userGrid userGrid17">최종학교</div>
+        <div class="userGrid userGrid18"><input class="finalSchoolGrid2 hidden"></input>
+          <div class="finalSchoolGrid"></div></div>
+        <div class="userGrid userGrid19">재직구분</div>
+        <div class="userGrid userGrid20"><input class="jobGrid2 hidden"></input>
+          <div class="jobGrid"></div></div>
+        <div class="userGrid userGrid21">자택주소</div>
+        <div class="userGrid22" id="userGrid22">
+          <input class="adressBox2 zipCodeGrid2  hidden"></input>
+          <div class="adressBox zipCodeGrid"></div>
+          <div class="adressBox adressSearchButton">주소검색</div>
+          <input class="adressBox2 adress1Grid2 hidden"></input>
+          <div class="adressBox adress1Grid"></div>
+          <input class="adressBox2 adress2Grid2 hidden"></input>
+          <div class="adressBox adress2Grid"></div>
+        </div>
+        <div class="userGrid userGrid23">정보수신 동의</div>
+        <div class="userGrid24">
+          <p class="mailcheckboxGrid"></p>
+        </div>
+      </div>
+      <div class="userdataupdateBtnBox">
+        <div class="userDataUpdateBtn1 hidden">취소</div>
+        <div class="userDataUpdateBtn2 hidden">수정완료</div>
+        <div class="userDataUpdateBtn">정보수정</div>
+      </div>
+      </div>
+
+    <div class="userDelete-box hidden"> <!-- ------------------------------------회원탈퇴------------------------------------ -->
+
+      <h2 class="userDeleteBoxTitle">회원탈퇴</h2>
+        <div class="userDeleteContainer"></div>
+          
+    </div>
+  </div>
+    <div id="footer"></div>
+  </div>
+  <script src="/js/mypage.js"></script>
+</body>
+</html>

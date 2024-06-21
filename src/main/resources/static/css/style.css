@@ -1,0 +1,473 @@
+/* 한글폰트 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 전체적용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+/* base */
+* {
+  padding: 0;
+  margin: 0;
+  color: #333333;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+
+.root {
+  width: 80%;
+  margin: 0 auto;
+}
+/* .header {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #333333;
+  box-sizing: border-box;
+}
+.wrap {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.header h1 {
+  float: left;
+  width: 400px;
+  height: 100%;
+  padding-top: 27px;
+  box-sizing: border-box;
+}
+.headerLoginBtn {
+  width: 100px;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 15px;
+  cursor: pointer;
+} */
+/* gnb */
+/* .gnb {
+  float: right;
+  width: 750px;
+  height: 100%;
+}
+.gnb > ul > li {
+  float: left;
+  width: 150px;
+  height: 94px;
+  line-height: 94px;
+  text-align: center;
+
+  position: relative;
+}
+.gnb .mainnav {
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+}
+.gnb li .mainnav:hover {
+  color: #333333;
+} */
+
+/* footer */
+/* .footer {
+  width: 100%;
+  height: 100px;
+  background-color: #333333;
+}
+.footer h1 {
+  float: left;
+  width: 400px;
+  height: 100px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.footer p {
+  float: left;
+  width: 400px;
+  height: 100px;
+  line-height: 100px;
+  color: #fff;
+  text-align: center;
+}
+.snsnav {
+  float: right;
+  width: 400px;
+  height: 100px;
+  line-height: 100px;
+}
+.snsnav ul {
+  float: right;
+}
+.snsnav li {
+  float: left;
+  margin: 0 10px;
+}
+.snsnav a {
+  color: #fff;
+} */
+
+/*
+rem 단위 => 루트(html 태그)의 폰트 사이즈 대비 비율
+            (1rem = 16px, 2rem = 32px, 0.5rem = 8px)
+em 단위  => 부모의 폰트 사이즈 대비 비율
+            (만약 루트는 16px 이지만 부모가 20px 이라면)
+            (1em = 20px, 2em = 40px, 0.5em = 10px)
+*/
+
+/* 컨테이너 클래스 */
+/* .container {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid black;
+} */
+
+/* 타이틀 클래스 */
+.title {
+  width: 100%;
+  height: 150px;
+  background-color: lightblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*font-size: 32px; 기본 size 16px */
+  font-size: 2rem; /* rem 단위 사용 */
+  color: dodgerblue;
+}
+
+/* 메뉴 클래스 */
+.menu {
+  width: 100%;
+  /* height: 50px; */
+  background-color: dodgerblue;
+
+  display: flex;
+  justify-content: start; /* 보통 왼쪽에 붙임 */
+  align-items: center;
+}
+
+/* 컨텐츠 클래스 */
+.content {
+  width: 100%;
+  /* height: 500px; */
+  background-color: khaki;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 25px 3%;
+  padding: 20px 30px;
+}
+
+.userInfoPage, .userEducationPage {
+  width: 100%;
+  /* height: 500px; */
+  background-color: khaki;
+  padding: 20px;
+}
+
+/* 교재 안에 고급선택자 부분 설명, > 는 자식, 없으면 자손 */
+.menu > div {
+  width: 120px;
+  height: 50px;
+  text-align: center;
+
+  /* 블록이 아닌 text 의 위아래 중앙 배치는 line-height(줄간격) 사용 */
+  line-height: 50px;
+
+  color: white;
+  font-weight: 700; /* 폰트 굵기 */
+  font-size: 1.3rem; /* 폰트 사이즈 1.3배 */
+}
+
+/* 메뉴 자식 div */
+.menu > div:hover {
+  color: dodgerblue;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* 게임 클래스 */
+.game {
+  /*
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    */
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2); /* 주의 => 쉼표가 없음 */
+  transition: all 0.2s ease;
+  padding: 20px;
+}
+
+.game:hover {
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.4);
+  transform: translate(0px, -5px); /* 위로 5px 올라가도록 */
+  cursor: pointer;
+}
+
+/* 이미지 클래스 */
+.image {
+  width: 100%;
+}
+
+/* 컨텐츠 자손 p */
+.content p {
+  /* 자손 */
+  margin: 5px;
+  text-align: left;
+}
+
+.lectureName {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center !important;
+}
+
+/* 프로덕트 클래스 */
+.product {
+  width: 100%;
+  background-color: khaki;
+  padding: 20px;
+}
+
+/* 프로덕트 자손 p */
+.product p {
+  margin: 10px 20px;
+}
+
+/* 로그인 클래스 */
+.login {
+  height: 300px;
+  background-color: khaki;
+  display: flex;
+  align-items: center;
+}
+
+/* 로그인-박스 클래스 */
+.login-box {
+  width: 450px;
+  display: grid;
+  /* grid-template-columns: 40% 60%; /* 갭 포함 적용됨 */
+  grid-template-columns: 4fr 6fr; /* => 갭 포함 안됨 */
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-left: 30px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+
+/* 로그인버튼 클래스 */
+.loginBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 로그아웃버튼 클래스 */
+.logoutBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.purchaseBtn {
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.cartBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto; /* 위아래 0, 좌우 가운데 */
+}
+
+.userDataUpdate{
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 30px 30px auto; /* 위아래 0, 좌우 가운데 */
+}
+
+.loginBtn:hover,
+.logoutBtn:hover,
+.purchaseBtn:hover,
+.cartBtn.hover,
+.userDataUpdate:hover {
+  background-color: lightblue;
+  color: dodgerblue;
+}
+
+/* 회원가입 박스 */
+.signup-box {
+  width: 450px;
+  display: grid;
+  grid-template-columns: 40% 60%; /* 갭 포함 적용됨 */
+  /* grid-template-columns: 4fr 6fr; => 갭 포함 안됨 */
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0; /* 세로, 가로 */
+  margin-left: 30px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+
+/* 버튼이 들어있는 박스 */
+.button-box {
+  width: 450px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+/* 회원등록, 닫기버튼 클래스 */
+.registrationBtn,
+.registrationCloseBtn {
+  width: 150px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.registrationBtn:hover,
+.registrationCloseBtn:hover {
+  background-color: lightblue;
+  color: dodgerblue;
+}
+
+/* 유저박스 클래스 */
+.user-box {
+  width: 450px;
+  margin-left: 30px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.low-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  align-items: center;
+}
+
+.cart {
+  width: 100%;
+  background-color: khaki;
+  padding: 20px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse; /* => 줄이 두개씩 안나오도록
+        collapse : 서로 이웃하는 테이블이나 셀의 테두리선을 겹쳐서 표현 합니다.
+        separate : 기본값으로 서로 이웃하는 테이블이나 셀의 테두리선을 분리시켜 표현*/
+  border-radius: 5px;
+  overflow: hidden; /* => 스크롤바 없앰 */
+  background-color: white;
+}
+
+.cart-table td {
+  text-align: center;
+}
+
+thead {
+  /* thead 는 Tag 임 */
+  background-color: #27ea60;
+  height: 50px;
+}
+
+.tr:nth-child(even) td {
+  /* tr:nth-child(even) – 짝수, tr:nth-child(odd) – 홀수 */
+  background-color: #eaeaed;
+}
+
+.imgtd {
+  width: 200px;
+}
+
+.totalprice {
+  display: inline-block;
+}
+
+/* CSS 에서 hidden 은 맨 아래에 위치해야 함, 반응형 media query 등 */
+.hidden {
+  display: none;
+}
