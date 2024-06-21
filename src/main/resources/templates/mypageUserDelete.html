@@ -58,8 +58,10 @@
         </table>
         <h2 class="userDeleteReasonTitle">탈퇴사유</h2>
         <div class="userDeleteReasonBox">
-          <textarea id="userDeleteReason" rows="3" placeholder="탈퇴 사유를 입력해주세요" oninput="handleResizeHeight()"></textarea>
+          <textarea minlength = "2" id="userDeleteReason" rows="3" placeholder="탈퇴 사유를 입력해주세요" 
+          onkeyup="textMinLength()" oninput="handleResizeHeight()"></textarea>
         </div>
+        <div class="textMinLengthAlert hidden">*탈퇴 사유를 2자 이상 입력하세요.</div>
         <div class="userDeleteBtn">회원탈퇴</div>
       </div>
           

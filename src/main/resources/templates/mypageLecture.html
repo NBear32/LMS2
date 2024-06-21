@@ -41,7 +41,31 @@
       </div>
         
       <div class="userLectureGraphContainer"> <!-- ------------------------------------요약정보------------------------------------ -->
-          <div class="userLectureGraph">
+         
+        <h2 class="userEducationActivityTitle">나의 학습활동</h2>
+        
+        <div class="userLectureGraph">
+
+          <div class="userGraphSearchBar">
+            <select id="" required>
+              <option value="" disabled selected>연도</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+            </select>
+            <select id="" required>
+              <option value="" disabled selected>전체</option>
+              <option value="1"></option>
+              <option value="2"></option>
+            </select>
+            <select id="" required>
+              <option value="" disabled selected>과정명</option>
+              <option value="1"></option>
+              <option value="2"></option>
+            </select>
+            <input placeholder="검색어를 입력하세요" type="text">
+            <div id="userGraphSearchBtn">검색</div>
+          </div>
+              
             <div class="userLectureGraphGraduations">
 
               <!-- 그래프 눈금 -->
@@ -137,6 +161,29 @@
       </div>
 
       <div class="userLectureCompleteContainer hidden"> <!-- ------------------------------------강의완료------------------------------------ -->
+        
+        <div class="userCompleteLecSearchBarBorder">
+        <div class="userCompleteLecSearchBar">
+          <select id="" required>
+            <option value="" disabled selected>연도</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+          </select>
+          <select id="" required>
+            <option value="" disabled selected>전체</option>
+            <option value="1"></option>
+            <option value="2"></option>
+          </select>
+          <select id="" required>
+            <option value="" disabled selected>과정명</option>
+            <option value="1"></option>
+            <option value="2"></option>
+          </select>
+          <input placeholder="검색어를 입력하세요" type="text">
+          <div id="userCompleteLecSearchBtn">검색</div>
+        </div>
+      </div>
+        
         <div class="completelList">
           <table class="complete-table">
             <thead>

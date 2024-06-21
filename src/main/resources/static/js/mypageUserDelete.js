@@ -123,3 +123,18 @@ function handleResizeHeight() {
   textarea.style.height = 'auto';
   textarea.style.height = textarea.scrollHeight + 'px';
 };
+
+function textMinLength() {
+  document.querySelector("#userDeleteReason").addEventListener("change", (e) => {
+    console.log(e.target.value);
+    userDeleteReason = e.target.value;
+    if (userDeleteReason.length <= 1) {
+      document.querySelector(".textMinLengthAlert").classList.remove("hidden");
+      document.querySelector(".userDeleteReasonBox").style.backgroundColor = "rgb(229, 213, 218)"
+    }
+    if (userDeleteReason.length > 1) {
+      document.querySelector(".textMinLengthAlert").classList.add("hidden");
+      document.querySelector(".userDeleteReasonBox").style.backgroundColor = "rgb(242, 242, 242)";
+    }
+  });
+}

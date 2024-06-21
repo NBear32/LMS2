@@ -188,7 +188,7 @@ function displayCancelLecture(lectureList) { // --------------------------------
           tr.classList.add("lectr");
           lectureCancel.classList.add("lectureCancel");
           lectureCancelBtn.classList.add("lectureCancelBtn");
-          lectureCancelBtn.id = `lectureCancel-${index}`;
+          lectureCancelBtn.id = `lectureCancelBtn-${index}`;
           // 태그속성추가
           img.src = data.lecture.imagePath;
           lectureName.textContent = data.lecture.lectureName;
