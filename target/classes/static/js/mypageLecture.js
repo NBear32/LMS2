@@ -111,6 +111,7 @@ function displayLecture(lectureList) { // --------------------------------------
           const progressBar = document.createElement("div");
           const progressBar2 = document.createElement("div");
           const classRoom = document.createElement("td");
+          const classRoomBtn = document.createElement("div");
           const img = document.createElement("img");
           // 클래스이름 생성
           imgtd.classList.add("imgtd");
@@ -119,7 +120,7 @@ function displayLecture(lectureList) { // --------------------------------------
           lectureProgress.classList.add("lecProgress");
           progressBar.classList.add("progressBar");
           progressBar2.classList.add("progressBar2");
-          classRoom.classList.add("classRoomBtn");
+          classRoomBtn.classList.add("classRoomBtn");
           // 태그속성추가
           img.src = data.lecture.imagePath;
           lectureName.textContent = data.lecture.lectureName;
@@ -127,8 +128,9 @@ function displayLecture(lectureList) { // --------------------------------------
           lectureProgress.textContent = (data.progressLectureContentsSeq / data.finalLectureContentsSeq * 100).toFixed(1) + "%";
           progressBar2.style.width = (data.progressLectureContentsSeq / data.finalLectureContentsSeq * 100).toFixed(0) + "%";
 
-          classRoom.textContent = "강의실"
+          classRoomBtn.textContent = "강의실"
           // appendChild 부모자식 위치 설정
+          classRoom.appendChild(classRoomBtn);
           progressBar.appendChild(progressBar2);
           lectureProgress.appendChild(progressBar);
           imgtd.appendChild(img);
@@ -345,18 +347,3 @@ document.querySelector("#lecturemenu4").addEventListener("click", () => {
   document.querySelector("#lecturemenu1").style.backgroundColor = "white";
   document.querySelector("#lecturemenu1").style.color = "black";
 });
-
-
-// function CancelLecture(userId){
-// if (confirm("수강을 취소하시겠습니까?")) {
-//   axios
-//   .get(urlRegi + data.user.userId + ".data", { withCredentials: true })
-//   .then((response) => {
-//     console.log(data.lectureStatus);
-//   })
-//   .catch((error) => {
-//     console.log("에러 발생: ", error);
-//   });
-//   location.reload();
-// }
-// }

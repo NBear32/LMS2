@@ -48,7 +48,7 @@
         <div class="userGrid userGrid8"> <input class="engNameGrid2 hidden"></input>
           <div class="engNameGrid"></div></div>
         <div class="userGrid userGrid9">생년월일</div>
-        <div class="userGrid userGrid10">
+        <div class="userGrid userGrid10"> <input type="date" class="birthGrid2 hidden"></input>
           <div class="birthGrid"></div>
         </div>
         <div class="userGrid userGrid11">이메일</div>
@@ -78,16 +78,17 @@
         </div>
         <div class="userGrid userGrid23">정보수신 동의</div>
         <div class="userGrid24">
+          <form id = "frm" name="frm" method="post" action="./check_ok.php" onsubmit="return check_form();">
           <ul>
-            <li><input type="checkbox" class="userDataCheckBox"></li>
+            <li><input type="checkbox" class="userDataCheckBox" id = "CheckBoxEmail" disabled></li>
             <li></input>
               <div>이메일</div>
             </li>
-            <li><input type="checkbox" class="userDataCheckBox"></li>
+            <li><input type="checkbox" class="userDataCheckBox" id = "CheckBoxSms" disabled></li>
             <li></input>
               <div>SMS</div>
             </li>
-            <li> <input type="checkbox" class="userDataCheckBox"></li>
+            <li> <input type="checkbox" class="userDataCheckBox" id = "CheckBoxPromo" disabled></li>
             <li></input>
               <div>광고, 프로모션</div>
             </li>

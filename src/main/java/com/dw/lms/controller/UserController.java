@@ -103,4 +103,9 @@ public class UserController {
     public User getPurchaseListByUser(@PathVariable String userId) {
         return userService.getUserByUserId(userId);
     }
+
+    @PutMapping("/userset")
+    public User SetUserData(@RequestBody User user) {
+        return userService.SetUserData(user);
+    }
 }
