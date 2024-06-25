@@ -53,7 +53,9 @@ public class UserService {
                 userDto.getEducation(),
                 userDto.getFinalSchool(),
                 userDto.getCfOfEmp(),
-                userDto.getConsentToRiYn(),
+                userDto.getReceiveEmailYn(),
+                userDto.getReceiveSmsYn(),
+                userDto.getReceiveAdsPrPromoYn(),
                 userDto.getActYn(),
                 userDto.getUpdatedAt()
         );
@@ -95,6 +97,10 @@ public class UserService {
             temp.setZip_code(user.getZip_code());
             temp.setAddress1Name(user.getAddress1Name());
             temp.setAddress2Name(user.getAddress2Name());
+            temp.setCfOfEmp(user.getCfOfEmp());
+            temp.setReceiveEmailYn(user.getReceiveEmailYn());
+            temp.setReceiveSmsYn(user.getReceiveSmsYn());
+            temp.setReceiveAdsPrPromoYn(user.getReceiveAdsPrPromoYn());
             userRepository.save(temp);
             return temp;
         }else {

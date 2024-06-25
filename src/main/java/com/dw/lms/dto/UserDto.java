@@ -29,6 +29,9 @@ public class UserDto { // Login Dto 2개(userId, password) 필요, Sign-up Dto 4
     private String finalSchool;
     private String cfOfEmp;
     private String consentToRiYn;
+    private String receiveEmailYn;
+    private String receiveSmsYn;
+    private String receiveAdsPrPromoYn;
     private String actYn;
     private LocalDateTime updatedAt;
     private Authority authority;

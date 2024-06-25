@@ -15,9 +15,10 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true); /* 인증정보가 필요한 컨텐츠도 허용 */
     }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
-                .addResourceLocations("classpath:/static/image/");
+                .addResourceLocations("classpath:/static/image/", "classpath:/static/lecture/**", "classpath:/static/pdf/**");
     }
 }

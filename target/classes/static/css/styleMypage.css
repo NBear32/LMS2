@@ -34,110 +34,9 @@ img {
 textarea{
 	resize: none;
 }
-/* .header {
-  width: 100%;
-  height: 100px;
-  border-bottom: 1px solid #333333;
-  box-sizing: border-box;
-} */
-/* .wrap {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-  display: inline-block;
-  position: relative;
+select, option {
+  font-size: 15px;
 }
-.header h1 {
-  float: left;
-  width: 400px;
-  height: 100%;
-  padding-top: 27px;
-  box-sizing: border-box;
-  position: relative;
-}
-.headerLoginBtn {
-  width: 100px;
-  height: 40px;
-  padding: 10px 20px;
-  background-color: dodgerblue;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  line-height: 35px;
-  border-radius: 15px;
-  cursor: pointer;
-} */
-  /* gnb */
-  /* .gnb {
-    float: right;
-    width: 70%;
-    height: 100%;
-    position: relative;
-    top: -100%;
-  }
-  .gnb > ul > li {
-    float: left;
-    width: 20%;
-    height: 94px;
-    line-height: 94px;
-    text-align: center;
-    white-space: nowrap;
-  
-    position: relative;
-  }
-  .gnb .mainnav {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666;
-  }
-  .gnb li .mainnav:hover {
-    color: #333333;
-  } */
-  
-  /* footer */
-  /* .footer {
-    width: 100%;
-    height: 100px;
-    background-color: #333333;
-  }
-  .footer h1 {
-    float: left;
-    width: 400px;
-    height: 100px;
-    padding-top: 30px;
-    box-sizing: border-box;
-  }
-  .footer p {
-    float: left;
-    width: 400px;
-    height: 100px;
-    line-height: 100px;
-    color: #fff;
-    text-align: center;
-  }
-  .snsnav {
-    float: right;
-    width: 400px;
-    height: 100px;
-    line-height: 100px;
-  }
-  .snsnav ul {
-    float: right;
-  }
-  .snsnav li {
-    float: left;
-    margin: 0 10px;
-  }
-  .snsnav a {
-    color: #fff;
-  }
-
-  .container {
-    width: 70%;
-    margin: 0 auto;
-    border: 1px solid black;
-  } */
    
 .sideMenu {
   width: 100%;
@@ -755,18 +654,123 @@ input::-ms-input-placeholder {color:#8c8c8c;}
   animation-timing-function: ease-in-out; */
 }
 
+/* @keyframes play {
+  0%   {width: 0%;}
+  100% {width: 100%;}
+} */
+
 .textMinLengthAlert {
   font-size: 1.4rem;
   color: crimson;
   font-weight: 500;
 }
 
-/* @keyframes play {
-  0%   {width: 0%;}
-  100% {width: 100%;}
-} */
-
 .hidden {
   display: none;
 }
+
+/* .header {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #333333;
+  box-sizing: border-box;
+} */
+/* .wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  position: relative;
+}
+.header h1 {
+  float: left;
+  width: 400px;
+  height: 100%;
+  padding-top: 27px;
+  box-sizing: border-box;
+  position: relative;
+}
+.headerLoginBtn {
+  width: 100px;
+  height: 40px;
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 15px;
+  cursor: pointer;
+} */
+  /* gnb */
+  /* .gnb {
+    float: right;
+    width: 70%;
+    height: 100%;
+    position: relative;
+    top: -100%;
+  }
+  .gnb > ul > li {
+    float: left;
+    width: 20%;
+    height: 94px;
+    line-height: 94px;
+    text-align: center;
+    white-space: nowrap;
+  
+    position: relative;
+  }
+  .gnb .mainnav {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+  }
+  .gnb li .mainnav:hover {
+    color: #333333;
+  } */
+  
+  /* footer */
+  /* .footer {
+    width: 100%;
+    height: 100px;
+    background-color: #333333;
+  }
+  .footer h1 {
+    float: left;
+    width: 400px;
+    height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
+  .footer p {
+    float: left;
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+    text-align: center;
+  }
+  .snsnav {
+    float: right;
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+  }
+  .snsnav ul {
+    float: right;
+  }
+  .snsnav li {
+    float: left;
+    margin: 0 10px;
+  }
+  .snsnav a {
+    color: #fff;
+  }
+
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid black;
+  } */
   

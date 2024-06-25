@@ -95,7 +95,7 @@ axios.get(urlRegi, { withCredentials: true })
 function displayLecture(lectureList) { // ----------------------------------------학습중----------------------------------------
   console.log("응답 lectureList: ", lectureList);
   const tbody = document.querySelector(".studying-body");
-  lectureList.forEach((data, index) => {
+  lectureList.forEach((data) => {
 
     axios.get(urlCurrent)
       .then((response) => {
@@ -167,6 +167,7 @@ function displayLecture(lectureList) { // --------------------------------------
 function displayCancelLecture(lectureList) { // ----------------------------------------수강취소----------------------------------------
   console.log("응답 lectureList: ", lectureList);
   const tbody = document.querySelector(".cancel-body");
+  const Cyears = document.querySelector("#userCancelLecSearchYears")
   lectureList.forEach((data, index) => {
 
     axios.get(urlCurrent)

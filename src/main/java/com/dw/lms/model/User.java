@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,10 +26,13 @@ public class User implements UserDetails { // UserDetails 를 상속받아 사�
     @Id
     @Column(name="user_id", length=100)
     private String userId;
+
     @Column(name="user_name", length=255, nullable = false)
     private String userNameKor;
+
     @Column(name="email", length=255, nullable = false)
     private String email;
+
     @Column(name="password")
     private String password;
 
@@ -70,8 +74,17 @@ public class User implements UserDetails { // UserDetails 를 상속받아 사�
     @Column(name="cf_of_emp", length = 2)
     private String cfOfEmp;
 
-    @Column(name="consent_to_ri_yn", length = 1)
-    private String consentToRiYn;
+    @Column(name="receive_email_yn", length = 1)
+    @ColumnDefault("'N'")
+    private String receiveEmailYn;
+
+    @Column(name="receive_sms_yn", length = 1)
+    @ColumnDefault("'N'")
+    private String receiveSmsYn;
+
+    @Column(name="receive_ads_pr_promo_yn", length = 1)
+    @ColumnDefault("'N'")
+    private String receiveAdsPrPromoYn;
 
     @Column(name="act_yn", length = 1)
     private String actYn;

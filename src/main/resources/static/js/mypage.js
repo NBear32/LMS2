@@ -76,10 +76,10 @@ function displayUser(UserData) {
       const finalSchoolGrid = document.querySelector(".finalSchoolGrid");
       finalSchoolGrid.textContent = data.finalSchool;
       
-      // jobGrid = document.querySelector(".jobGrid");
-      // jobGrid.value = data.lecture;
-
-      // mailcheckboxGrid = document.querySelector(".lectureGrid");
+      const jobGrid2 = document.querySelector(".jobGrid2");
+      jobGrid2.value = data.cfOfEmp;
+      const jobGrid = document.querySelector(".jobGrid");
+      jobGrid.textContent = data.cfOfEmp;
 
       const zipCodeGrid2 = document.querySelector(".zipCodeGrid2");
       zipCodeGrid2.value = data.zip_code;
@@ -96,8 +96,41 @@ function displayUser(UserData) {
       const adress2Grid = document.querySelector(".adress2Grid");
       adress2Grid.textContent = data.address2Name;
 
+      const check1 = document.getElementById('CheckBoxEmail');
+      if (data.receiveEmailYn == "Y") { check1.setAttribute("checked", true); };
+      if (data.receiveEmailYn == "N") { check1.removeAttribute("checked"); };
+      const check2 = document.getElementById('CheckBoxSms');
+      if (data.receiveSmsYn == "Y") {  check2.setAttribute("checked", true);  };
+      if (data.receiveSmsYn == "N") { check2.removeAttribute("checked"); } ;
+      const check3 = document.getElementById('CheckBoxPromo');
+      if (data.receiveAdsPrPromoYn == "Y") {  check3.setAttribute("checked", true);  };
+      if (data.receiveAdsPrPromoYn == "N") { check3.removeAttribute("checked"); };
+
+      document.querySelector("#CheckBoxEmail").addEventListener("click", () => {
+        if (check1.checked == false) { check1.setAttribute("checked", true); };
+        if (check1.checked == true) { check1.removeAttribute("checked"); };
+      });
+      document.querySelector("#CheckBoxSms").addEventListener("click", () => {
+        if (check2.checked == false) { check2.setAttribute("checked", true); };
+        if (check2.checked == true) { check2.removeAttribute("checked"); };
+      });
+      document.querySelector("#CheckBoxPromo").addEventListener("click", () => {
+        if (check3.checked == false) { check3.setAttribute("checked", true); };
+        if (check3.checked == true) { check3.removeAttribute("checked"); };
+      });
+
       document.querySelector(".userDataUpdateBtn2").addEventListener("click", () => {
+        
         if (confirm("회원정보를 변경하시겠습니까?")) {
+
+          const isEmail = (check1.checked)? "Y" : "N";
+          const isSms = (check2.checked)? "Y" : "N";
+          const isPromo  = (check3.checked)? "Y" : "N";
+
+          console.log("이메일" + isEmail);
+          console.log("SMS" + isSms);
+          console.log("프로모" + isPromo);
+
           const userNewData = {
             userId: idGrid.textContent,
             userNameEng: engNameGrid2.value,
@@ -109,8 +142,11 @@ function displayUser(UserData) {
             address1Name: adress1Grid2.value,
             address2Name: adress2Grid2.value,
             finalSchool: finalSchoolGrid2.value,
+            cfOfEmp: jobGrid2.value,
             updatedAt: new Date(),
-            
+            receiveEmailYn: isEmail,
+            receiveSmsYn: isSms,
+            receiveAdsPrPromoYn: isPromo
           }
           console.log('id:', idGrid.textContent);
           console.log('email:', emailGrid2.value);
@@ -126,7 +162,6 @@ function displayUser(UserData) {
           
         }
       });
-
     })
     .catch((error) => {
       console.log("에러 발생: ", error);
@@ -224,3 +259,17 @@ function check_form() {
 
   document.querySelector(".userDataCheckBox").disabled = true;
 }
+
+document.querySelector("#CheckBoxEmail").addEventListener("click", () => {
+  const check1 = document.getElementById('CheckBoxEmail');
+  const check2 = document.getElementById('CheckBoxSms');
+  const check3 = document.getElementById('CheckBoxPromo');
+
+  const isEmail = (check1.checked) ? "Y" : "N";
+  const isSms = (check2.checked) ? "Y" : "N";
+  const isPromo = (check3.checked) ? "Y" : "N";
+
+  console.log("이메일" + isEmail);
+  console.log("SMS" + isSms);
+  console.log("프로모" + isPromo);
+});
