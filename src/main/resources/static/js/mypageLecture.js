@@ -1,5 +1,6 @@
 const urlCurrent = "http://localhost:8080/user/current";
 const urlRegi = "http://localhost:8080/course/registration";
+const urlprogress = "http://localhost:8080/progress/getAllLectureProgress";
 
 
 function urlCurrentSet() {
@@ -33,6 +34,17 @@ function loadHtml() {
     });
 }
 window.onload = loadHtml;
+
+axios.get(urlprogress, { withCredentials: true })
+  .then((response) => {
+    const data = response.data;
+    data.forEach((data) => {
+      console.log("응답 Response: ", data);
+    })
+  })
+  .catch((error) => {
+    console.log("에러 발생: ", error);
+  });
 
 function userDataSet(lecData) { // ----------------------------------------요악정보----------------------------------------
 
@@ -172,7 +184,7 @@ function displayCancelLecture(lectureList) { // --------------------------------
 
     axios.get(urlCurrent)
       .then((response) => {
-        console.log(index);
+        // console.log(index);
 
         if (response.data.userId === data.user.userId && (data.lectureStatus == "I") && data.lectureCompletedCheck == "N") {
 
@@ -247,7 +259,7 @@ function displayCompleteLecture(lectureList) { // ------------------------------
           const imgtd = document.createElement("td");
           const lectureName = document.createElement("td");
           const lectureDate = document.createElement("td");
-          const lectureGrade = document.createElement("td");
+          // const lectureGrade = document.createElement("td");
           const isLectureEnd = document.createElement("td");
           const classRoom = document.createElement("td");
           const reviewBtn = document.createElement("div");
@@ -271,7 +283,7 @@ function displayCompleteLecture(lectureList) { // ------------------------------
           tr.appendChild(imgtd);
           tr.appendChild(lectureName);
           tr.appendChild(lectureDate);
-          tr.appendChild(lectureGrade);
+          // tr.appendChild(lectureGrade);
           tr.appendChild(isLectureEnd);
           tr.appendChild(classRoom);
           tbody.appendChild(tr);

@@ -101,6 +101,7 @@ public class UserService {
             temp.setReceiveEmailYn(user.getReceiveEmailYn());
             temp.setReceiveSmsYn(user.getReceiveSmsYn());
             temp.setReceiveAdsPrPromoYn(user.getReceiveAdsPrPromoYn());
+            temp.setUpdatedAt(user.getUpdatedAt());
             userRepository.save(temp);
             return temp;
         }else {

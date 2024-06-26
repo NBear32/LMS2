@@ -5,6 +5,17 @@ const urlUserSet = "http://localhost:8080/user/userset";
 axios.get(urlCurrent)
   .then((response) => {
     console.log("응답 Response: ", response);
+
+    /* 240625 Admin 관련 추가 */
+    const authorityArray = response.data.authority;
+    const authorityName = authorityArray[0].authority;
+    if (authorityName === "ROLE_ADMIN") {
+      console.log("authority 처리 Start!!!");
+      const sideBtnAdmin = document.getElementById('sideBtnAdmin');
+      sideBtnAdmin.className = "sideBtn";
+      console.log("authority 처리 End!!!");
+    }
+
     displayUser("http://localhost:8080/user/id/" + response.data.userId);
   })
   .catch((error) => {
