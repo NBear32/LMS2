@@ -1,0 +1,236 @@
+/* 한글폰트 */
+@font-face {
+    font-family: "GmarketSansMedium";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+  
+/* 전체적용 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, GmarketSansMedium;
+    text-decoration: none;
+    color: inherit;
+ }
+
+.root {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+} */
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+aside {
+    width: 10%;
+    float: left;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+aside ul li a.active {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+main {
+    width: 90%;
+    float: right;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fafafa;
+}
+/**/
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: auto;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+th:nth-child(1) { width: 5%; }   /* No */
+th:nth-child(2) { width: 5%; }   /* 카테고리 */
+th:nth-child(3) { width: 45%; }  /* 제목 */
+th:nth-child(4) { width: 15%; }  /* 작성자 */
+th:nth-child(5) { width: 20%; }  /* 등록일 */
+th:nth-child(6) { width: 10%; }  /* 답변상태 */
+
+
+#new-question-btn {
+    position: absolute; /* 절대 위치 설정 */
+    right: 20px; /* 우측 여백 */
+    bottom: 20px; /* 하단 여백 */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* 페이징 스타일 */
+.pagination {
+    clear: both;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination span:hover {
+    text-decoration: underline;
+}
+
+/* 상세보기 스타일 */
+#question-detail {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#question-detail h2 {
+    margin-top: 0;
+}
+
+#question-detail p {
+    margin: 10px 0;
+}
+
+#question-detail button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#question-detail button:hover {
+    background-color: #0056b3;
+}
+
+/* 관리자 답변 폼 스타일 */
+#admin-response-form {
+    margin-top: 20px;
+    display: none;
+}
+
+#admin-response-form textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+#admin-response-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#admin-response-form button:hover {
+    background-color: #218838;
+}
+
+/* 답변하기 버튼 스타일 */
+#reply-button {
+    display: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#reply-button:hover {
+    background-color: #0056b3;
+}

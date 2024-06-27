@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/lms_notices.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+            <div class="root">
+                <div class="content">
+                    <aside>
+                        <ul>
+                            <li><a href="lms_notices.html" class="active">공지사항</a></li>
+                            <li><a href="lms_qa.html">질의응답</a></li>
+                            <li><a href="lms_events.html">이벤트</a></li>
+                        </ul>
+                    </aside>
+                    <main>
+                        <h1>공지사항</h1>
+                        <table id="notice-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>카테고리</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>등록일</th>
+                                    <th>조회</th>
+                                </tr>
+                            </thead>
+                            <tbody id="notice-list">
+                                <!-- 동적으로 내용이 삽입될 부분 -->
+                            </tbody>
+                        </table>
+                        <div class="pagination">
+                            <button id="prev-page"><</button>
+                            <span id="page-numbers"></span>
+                            <button id="next-page">></button>
+                        </div>
+                
+                        <!-- 상세 내용 표시 -->
+                        <div id="notice-detail" class="notice-detail" style="display: none;">
+                            <h2 id="detail-title"></h2>
+                            <p><strong>작성자:</strong> <span id="detail-writer"></span></p>
+                            <p><strong>작성일:</strong> <span id="detail-date"></span></p>
+                            <p><strong>조회수:</strong> <span id="detail-views"></span></p>
+                            <p id="detail-content"></p>
+                            <button id="back-to-list">목록</button>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        <div id="footer"></div>
+    </div>
+    
+    <script defer src="/js/lms_notices.js"></script>
+    <script defer src="/js/common.js"></script>
+</body>
+</html>

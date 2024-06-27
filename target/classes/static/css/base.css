@@ -1,0 +1,57 @@
+/* css base 파일 */
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+.root {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.side-box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 130px 30px 30px 30px;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.sidebar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.sidebar p {
+  text-align: center;
+  padding: 5px;
+}

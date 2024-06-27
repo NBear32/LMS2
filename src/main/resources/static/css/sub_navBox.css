@@ -1,0 +1,88 @@
+:root {
+  --skin01: #317abe;
+  --skin02: #30619c;
+  --skin03: #317abe; /* 컬러 변수 설정 */
+  --skin-bg: #f5f9fd;
+  --skin-bg2: #d6dee9;
+  --ft-color: #00cccc;
+}
+
+/* ul: 순서가 없는 목록 */
+/* ol: 순서가 있는 목록 */
+/* li: 목록 (<ul>, <ol>) 내에서 각각의 항목 */
+/* dl: 용어와 설명을 담고 있는 정의 목록 */
+/* dd: <dl> 요소 내에서 용어(<dt>)에 대한 설명 */
+ul, ol, li, dl, dd {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* 모든 Anchor 및 마우스를 Anchor 위로 올렸을 때의 상태 관련 설정 */
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  word-break: break-all
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* 왼쪽 메뉴 css */
+/* sub_navBox 안에 nav_tit 과 sub_navBoxIn 배치 */
+.sub_navBox { /* 왼쪽 메뉴 박스 */
+  width: 330px;
+  float: left;
+}
+
+.nav_tit { /* 왼쪽 메뉴 타이틀 */
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.sub_navBoxIn { /* 왼쪽 메뉴 안쪽 박스 */
+  border-radius: 15px;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+}
+
+.content_wrap { /* sub_navBoxIn 안쪽 컨텐츠 */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* <ul> 메뉴 리스트 박스(list) */
+.sub_nav {}
+
+/* :not(:last-of-type): => .sub_nav 클래스의 직계 자식인 <li> 요소들 중에서 마지막 요소를 제외한 모든 요소를 선택 */
+.sub_nav>li:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.sub_nav>li>a { /* li 안에 a Tag [Anchor] */
+  /* display: inline-block; */
+  width: 100%;
+  height: 100%;
+  padding-left: 29px;
+  line-height: 49px;
+  border-radius: 5px;
+  background-color: #e6e7eb;
+  font-size: 20px;
+  
+  display: flex;
+  justify-content: space-between;
+  padding-right: 29px;
+}
+
+/* .sub_nav > li > a:hover:  => .sub_nav 클래스 하위 <li> 요소의 <a> 요소에 마우스를 올렸을 때(:hover 상태) 적용 */
+/* .sub_nav > li.active > a: => .sub_nav 클래스 하위 <li> 요소 중 클래스가 active인 요소의 <a> 요소에 적용 */
+.sub_nav>li>a:hover, .sub_nav>li.active a {
+  background-color: var(--skin03);
+  color: #fff;
+}
+
+/* EOD : sub_Layout */

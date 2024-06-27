@@ -52,6 +52,9 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/user/signup"), // REST API 용 주소(WAS 까지), 가입
                                 new AntPathRequestMatcher("/login"),       // 일반주소, Static Page login 등 허용 주소를 기재함
                                 new AntPathRequestMatcher("/lms/**"), // 페이지 요청 (위의 3개와 다름) (톰켓 까지)
+                                // new AntPathRequestMatcher("/user/current"),
+                                new AntPathRequestMatcher("/api/notices/**"),   // Guest 공지사항 확인 가능
+                                new AntPathRequestMatcher("/api/lmsevents/**"), // Guest 이벤트 확인 가능
                                 new AntPathRequestMatcher("/image/**"),    // 페이지 요청 (위의 3개와 다름) (톰켓 까지)
                                 new AntPathRequestMatcher("/lecture/**"),  // 페이지 요청 (위의 3개와 다름) (톰켓 까지)
                                 new AntPathRequestMatcher("/pdf/**"),  // 페이지 요청 (위의 3개와 다름) (톰켓 까지)

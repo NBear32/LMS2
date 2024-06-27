@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+.root {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.side-box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 130px 30px 30px 30px;
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+}
+.sidebar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid black;
+  margin: 5px;
+  cursor: pointer;
+}
+.sidebar p {
+  text-align: center;
+  padding: 5px;
+}
+table {
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+/* 강의실 홈 */
+.courseHome {
+  width: 100%;
+}
+.courseHeader {
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid gray;
+  margin-bottom: 12px;
+}
+.courseHeader > ul {
+  padding-top: 20px;
+  margin-bottom: 12px;
+}
+.courseHeader > ul > li {
+  float: right;
+  font-size: 14px;
+}
+.liheader {
+  font-size: 30px;
+  font-weight: 700;
+  float: left;
+}
+.headerText {
+  color: deepskyblue;
+}
+
+.information {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+.informationText {
+  width: 100%;
+  border: 1px solid deepskyblue;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.lectureTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+.informationText > p {
+  font-size: 16px;
+}
+
+.watchBtn {
+  font-size: 20px;
+  background-color: #317abe;
+  color: #fff;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.syllabus {
+  width: 100%;
+}
+.detailText {
+  padding: 20px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+.introText {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 1000;
+  color: blue;
+  margin-bottom: 5px;
+}
+
+.lineHeight {
+  line-height: 200%;
+}
+
+.substance {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* 차시 */
+.explain {
+  padding: 10px;
+  margin: 20px 0 20px 0;
+}
+.explain > p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.explain > p > span {
+  color: deepskyblue;
+}
+.play {
+  padding: 5px;
+}
+.playBtn {
+  width: 100%;
+  height: 100%;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.lectureName {
+  text-align: left;
+  padding-left: 8px;
+}
+.padding {
+  padding: 0 3px 0 3px;
+}
+
+.dropBtn {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+.upBtn {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.moreOption {
+  background-color: deepskyblue;
+}
+
+.sideOption {
+  background-color: #317abe;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}

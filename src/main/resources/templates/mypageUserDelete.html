@@ -19,7 +19,35 @@
   </head>
 <body>
   <div class="container">
-    <div id="header"></div>
+        <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="root">
       <div class="sideMenu">
         <div class="title">마이페이지</div>
@@ -27,6 +55,7 @@
           <div class="sideBtn" id = "sideBtnUserLecture"><a href="mypageLecture.html">나의학습</a></div>
           <div class="sideBtn" style="background-color: steelblue; border: 2px solid white;" 
           id = "sideBtnUserDelete"><a style="color: white;" href="mypageUserDelete.html">회원탈퇴</a></div>
+          <div class="hidden" id = "sideBtnAdmin"><a href="mgmt_user.html">관리자 메뉴</a></div> <!-- 240625 Admin 관련 추가 -->
       </div>
     <div class="userDelete-box"> <!-- ------------------------------------회원탈퇴------------------------------------ -->
 
@@ -70,5 +99,6 @@
     <div id="footer"></div>
   </div>
   <script src="/js/mypageUserDelete.js"></script>
+  <script defer src="/js/common.js"></script>
 </body>
 </html>

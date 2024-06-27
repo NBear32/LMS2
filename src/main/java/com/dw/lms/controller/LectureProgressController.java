@@ -1,6 +1,7 @@
 package com.dw.lms.controller;
 
 import com.dw.lms.dto.LectureCategoryCountDto;
+import com.dw.lms.dto.LectureProgressDto;
 import com.dw.lms.dto.LectureProgressQueryDto;
 import com.dw.lms.dto.LectureStatusCountDto;
 import com.dw.lms.model.Lecture;
@@ -26,9 +27,14 @@ public class LectureProgressController {
                 HttpStatus.OK);
     }
 
-    @GetMapping("/progress/queryJPQL/{userId}/{lectureId}")
-    public ResponseEntity<List<LectureProgressQueryDto>> getLectureProgressQueryJPQL(@PathVariable String userId, @PathVariable String lectureId){
-        return new ResponseEntity<>(lectureProgressService.getLectureProgressQueryJPQL(userId, lectureId), HttpStatus.OK);
+//    @GetMapping("/progress/queryJPQL/{userId}/{lectureId}")
+//    public ResponseEntity<List<LectureProgressQueryDto>> getLectureProgressQueryJPQL(@PathVariable String userId, @PathVariable String lectureId){
+//        return new ResponseEntity<>(lectureProgressService.getLectureProgressQueryJPQL(userId, lectureId), HttpStatus.OK);
+//    }
+
+    @GetMapping("/lms/lecture/progress/{userId}/{lectureId}")
+    public ResponseEntity<List<LectureProgressDto>> getLectureProgressDetails(@PathVariable String userId, @PathVariable String lectureId) {
+        return new ResponseEntity<>(lectureProgressService.getLectureProgressDetails(userId,lectureId),HttpStatus.OK);
     }
 
 

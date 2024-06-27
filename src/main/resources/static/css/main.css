@@ -1,0 +1,91 @@
+/* 한글폰트 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 전체적용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+.root {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+}
+.content_category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category {
+  width: 100px;
+  height: 30px;
+  background-color: #999999;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.choise {
+  background-color: #555555;
+}
+
+/* 컨텐츠 클래스 */
+.content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.lecture {
+  padding: 10px;
+  border: 2px solid #fff;
+}
+.lecture:hover {
+  border: 2px solid #317abe;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.lectureTitle {
+  font-weight: 1000;
+  font-size: 15px;
+  margin: 0 0 5px 10px;
+}
+
+.content p {
+  margin: 0 0 5px 10px;
+  font-size: 12px;
+}
+
+.lecture > img {
+  width: 100%;
+}
+
+.moreBtn {
+  margin: 10px auto;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  background: #317abe;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}

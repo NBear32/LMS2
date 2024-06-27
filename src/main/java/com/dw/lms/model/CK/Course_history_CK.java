@@ -6,6 +6,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 public class Course_history_CK implements Serializable {
     private Course_registration course_registration;

@@ -7,6 +7,15 @@ function urlCurrentSet() {
   axios.get(urlCurrent)
     .then((response) => {
       console.log("응답 Response: ", response);
+          /* 240625 Admin 관련 추가 */
+    const authorityArray = response.data.authority;
+    const authorityName = authorityArray[0].authority;
+    if (authorityName === "ROLE_ADMIN") {
+        console.log("authority 처리 Start!!!");
+        const sideBtnAdmin = document.getElementById('sideBtnAdmin');
+        sideBtnAdmin.className = "sideBtn";
+        console.log("authority 처리 End!!!");
+    }
       userDataSet("http://localhost:8080/course/lectureStatusCount/id/" + response.data.userId);
     })
     .catch((error) => {
@@ -153,6 +162,17 @@ function displayLecture(lectureList) { // --------------------------------------
           tr.appendChild(lectureProgress);
           tr.appendChild(classRoom);
           tbody.appendChild(tr);
+
+					// 나의학습[학습중]에서 강의실 홈으로 이동
+          classRoomBtn.addEventListener("click", () => {
+            const courseUserId = data.user.userId;
+            const courseLectureId = data.lecture.lectureId;
+            window.location.href =
+              "course.html?userId=" +
+              courseUserId +
+              "&lectureId=" +
+              courseLectureId;
+          });
 
           document.querySelector("#lecturemenu2").addEventListener("click", () => {
             progressBar2.animate(

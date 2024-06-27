@@ -1,5 +1,7 @@
 package com.dw.lms.service;
 
+import com.dw.lms.dto.CourseEnrollCountDto;
+import com.dw.lms.dto.CourseLectureCountDto;
 import com.dw.lms.dto.LectureStatusCountDto;
 import com.dw.lms.model.CK.Course_registration_CK;
 import com.dw.lms.model.Course_registration;
@@ -139,7 +141,167 @@ public class CourseRegistrationService {
         }
     }
 
-    public List<Object[]> executeNativeQueryDto(String userId) {
+    public List<Object[]> executeNativeQueryDto3(String userName) {
+        String sqlQuery = "SELECT B.user_id " +
+                          "     , B.user_name " +
+                          "     , B.email " +
+                          "     , B.act_yn " +
+                          "     , count(*) as course_registration_cnt " +
+                          "  FROM user  B " +
+                          "     , course_registration A " +
+                          " WHERE A.user_id  = B.user_id " +
+                          "   AND B.user_name like :userName " +
+                          " GROUP BY " +
+                          "       B.user_id " +
+                          "     , B.user_name " +
+                          "     , B.email " +
+                          "     , B.act_yn " +
+                          " UNION ALL " +
+                          "SELECT B.user_id " +
+                          "     , B.user_name " +
+                          "     , B.email " +
+                          "     , B.act_yn " +
+                          "     , 0 as course_registration_cnt " +
+                          "  FROM user  B " +
+                          " WHERE B.user_name like :userName " +
+                          "   AND NOT EXISTS ( SELECT * " +
+                          "                      FROM course_registration A " +
+                          "                     WHERE A.user_id = B.user_id ) " +
+                          " ORDER BY 5 desc, 1 ";
+        Query query = entityManager.createNativeQuery(sqlQuery);
+        query.setParameter("userName", userName); // 전체는 %, 조건이 있으면 %조건%
+
+        return query.getResultList(); // Returns a list of Object arrays
+    }
+
+    public List<CourseLectureCountDto> getCourseLectureCountQueryJPQL(String userName) {
+
+        List<CourseLectureCountDto> targetDto = new ArrayList<>();
+        List<Object[]> results = executeNativeQueryDto3(userName);
+
+// [CourseEnrollCountDto]
+//        private String lectureId;
+//        private String lectureName;
+//        private String lectureStartDate;
+//        private String lectureEndDate;
+//        private String categoryName;
+//        private Long courseEnrollCount;
+
+        // Process the results
+        for (Object[] row : results) {
+            // Access each column in the row
+            System.out.println("userId: "            +row[0].toString());
+            System.out.println("userName: "          +row[1].toString());
+            System.out.println("userEmail: "         +row[2].toString());
+            System.out.println("actYn: "             +row[3].toString());
+            System.out.println("CauseLectureCount: " +row[4].toString());
+
+            String  column1Value = row[0].toString(); // Assuming column1 is of type String
+            String  column2Value = row[1].toString(); // Assuming column2 is of type String
+            String  column3Value = row[2].toString(); // Assuming column3 is of type String
+            String  column4Value = row[3].toString(); // Assuming column4 is of type String
+            Long    column5Value = Long.valueOf(row[4].toString()); // Assuming column6 is of type int
+
+            System.out.println("column1Value: "+ column1Value);
+            System.out.println("column2Value: "+ column2Value);
+            System.out.println("column3Value: "+ column3Value);
+            System.out.println("column4Value: "+ column4Value);
+            System.out.println("column5Value: "+ column5Value);
+
+            CourseLectureCountDto courseLectureCountDto = new CourseLectureCountDto(column1Value, column2Value, column3Value, column4Value, column5Value);
+            targetDto.add(courseLectureCountDto);
+            // Do something with the values...
+        }
+
+        return targetDto;
+    }
+
+    public List<Object[]> executeNativeQueryDto2(String lectureName) {
+        String sqlQuery = "SELECT B.lecture_id " +
+                          "     , B.lecture_name " +
+                          "     , B.education_period_start_date " +
+                          "     , B.education_period_end_date " +
+                          "     , C.category_name " +
+                          "     , count(*) as course_registration_cnt " +
+                          "  FROM category C " +
+                          "     , lecture  B " +
+                          "     , course_registration A " +
+                          " WHERE A.lecture_id  = B.lecture_id " +
+                          "   AND B.category_id = C.category_id " +
+                          "   AND B.lecture_name like :lectureName " +
+                          " GROUP BY " +
+                          "       B.lecture_id " +
+                          "     , B.lecture_name " +
+                          "     , B.education_period_start_date " +
+                          "     , B.education_period_end_date " +
+                          "     , C.category_name " +
+                          " UNION ALL " +
+                          "SELECT B.lecture_id " +
+                          "     , B.lecture_name " +
+                          "     , B.education_period_start_date " +
+                          "     , B.education_period_end_date " +
+                          "     , C.category_name " +
+                          "     , 0 as course_registration_cnt " +
+                          "  FROM category C " +
+                          "     , lecture  B " +
+                          " WHERE B.category_id = C.category_id " +
+                          "   AND B.lecture_name like :lectureName " +
+                          "   AND NOT EXISTS ( SELECT * " +
+                          "                      FROM course_registration A " +
+                          "                     WHERE A.lecture_id = B.lecture_id ) " +
+                          " ORDER BY 6 desc, 1 ";
+        Query query = entityManager.createNativeQuery(sqlQuery);
+        query.setParameter("lectureName", lectureName); // 전체는 %, 조건이 있으면 %조건%
+
+        return query.getResultList(); // Returns a list of Object arrays
+    }
+
+    public List<CourseEnrollCountDto> getCourseEnrollCountQueryJPQL(String lectureName) {
+
+        List<CourseEnrollCountDto> targetDto = new ArrayList<>();
+        List<Object[]> results = executeNativeQueryDto2(lectureName);
+
+// [CourseEnrollCountDto]
+//        private String lectureId;
+//        private String lectureName;
+//        private String lectureStartDate;
+//        private String lectureEndDate;
+//        private String categoryName;
+//        private Long courseEnrollCount;
+
+        // Process the results
+        for (Object[] row : results) {
+            // Access each column in the row
+            System.out.println("lectureId: "        +row[0].toString());
+            System.out.println("lectureName: "      +row[1].toString());
+            System.out.println("lectureStartDate: " +row[2].toString());
+            System.out.println("lectureEndDate: "   +row[3].toString());
+            System.out.println("categoryName: "     +row[4].toString());
+            System.out.println("courseEnrollCount: "+row[5].toString());
+
+            String  column1Value = row[0].toString(); // Assuming column1 is of type String
+            String  column2Value = row[1].toString(); // Assuming column2 is of type String
+            String  column3Value = row[2].toString(); // Assuming column3 is of type String
+            String  column4Value = row[3].toString(); // Assuming column4 is of type String
+            String  column5Value = row[4].toString(); // Assuming column5 is of type String
+            Long    column6Value = Long.valueOf(row[5].toString()); // Assuming column6 is of type int
+
+            System.out.println("column1Value: "+ column1Value);
+            System.out.println("column2Value: "+ column2Value);
+            System.out.println("column3Value: "+ column3Value);
+            System.out.println("column4Value: "+ column4Value);
+            System.out.println("column5Value: "+ column5Value);
+            System.out.println("column6Value: "+ column6Value);
+
+            CourseEnrollCountDto courseEnrollCountDto = new CourseEnrollCountDto(column1Value, column2Value, column3Value, column4Value, column5Value, column6Value);
+            targetDto.add(courseEnrollCountDto);
+            // Do something with the values...
+        }
+
+        return targetDto;
+    }
+
+    public List<Object[]> executeNativeQueryDto1(String userId) {
         String sqlQuery = "select 'A'        as lecture_status_id " +
                           "     , '수강신청' as lecture_status_name " +
                           "     , count(*)   as lecture_status_count " +
@@ -182,7 +344,7 @@ public class CourseRegistrationService {
     public List<LectureStatusCountDto> getLectureStatusCountJPQL(String userId) {
 
         List<LectureStatusCountDto> targetDto = new ArrayList<>();
-        List<Object[]> results = executeNativeQueryDto(userId);
+        List<Object[]> results = executeNativeQueryDto1(userId);
 
 // [LectureCategoryCountDto]
 //    private String LectureStatusId;

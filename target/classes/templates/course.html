@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/course.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- Google 폰트 => Poppins Embed code 사용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LMS</title>
+    <!-- header 에 넣는 이유는 body 에서 사용해야 되기 때문에 미리 로드해야 함 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+          <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <div class="root">
+        <div class="side-box">
+          <div class="sidebar sideBtn1 sideOption"><p>강의실 홈</p></div>
+          <div class="sidebar sideBtn2"><p>강의계획서</p></div>
+          <div class="sidebar sideBtn3"><p>진도</p></div>
+        </div>
+        <!-- 본문 -->
+        <div class="content">
+          <!-- 강의실 홈 -->
+          <div class="courseHome">
+            <div class="courseHeader">
+              <p class="liheader">강의실 홈</p>
+              <ul>
+                <li class="headerText">강의실 홈</li>
+                <li class="padding">▶</li>
+                <li>나의 강의실</li>
+              </ul>
+            </div>
+            <div class="information">
+              <div class="informationText"></div>
+              <div class="watchBtn">▶ 시청하기</div>
+            </div>
+          </div>
+          <!-- 강의계획서 -->
+          <div class="syllabus hidden">
+            <div class="detailText syllabusText"></div>
+          </div>
+          <!-- 진도 -->
+          <div class="progress hidden">
+            <div class="explain detailText">
+              <p>
+                본 과정은 <span>PC,Mobile</span>에서 학습지원이 가능하며, 차시
+                학습시간은 차시 내 목차별 학습시간의 합산입니다.
+              </p>
+              <p>차시를 클릭해야 상세 목차를 확인하고 진행할 수 있습니다.</p>
+            </div>
+            <div class="pro detailText">
+              <table class="detailTable">
+                <colgroup>
+                  <col width="5%" />
+                  <col width="30%" />
+                  <col width="7%" />
+                  <col width="6%" />
+                  <col width="20%" />
+                  <col width="13%" />
+                  <col width="8%" />
+                  <col width="10%" />
+                </colgroup>
+                <tr>
+                  <th>차시</th>
+                  <th>학습목차</th>
+                  <th>진도율</th>
+                  <th>학습횟수</th>
+                  <th>최종학습일시 <br />(학습완료일)</th>
+                  <th>학습시간 <br />(기준시간)</th>
+                  <th>강의노트</th>
+                  <th>학습하기</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+    <script src="/js/course.js"></script>
+    <script defer src="/js/common.js"></script>
+  </body>
+</html>

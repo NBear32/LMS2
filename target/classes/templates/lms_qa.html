@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/lms_qa.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>질의응답</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+        <div class="root">
+            <div class="content">
+                <aside>
+                    <ul>
+                        <li><a href="lms_notices.html">공지사항</a></li>
+                        <li><a href="lms_qa.html" class="active">질의응답</a></li>
+                        <li><a href="lms_events.html">이벤트</a></li>
+                    </ul>
+                </aside>
+                <main>
+                    <h1>질의응답</h1>
+
+                    <!-- 카테고리 선택 버튼 -->
+                    <div id="category-buttons">
+                        <button class="category-btn" data-category="all">전체</button>
+                        <button class="category-btn" data-category="1">카테고리 1</button>
+                        <button class="category-btn" data-category="2">카테고리 2</button>
+                        <button class="category-btn" data-category="3">카테고리 3</button>
+                    </div>
+
+                    <div>
+                        <input type="text" id="search-keyword" placeholder="검색어를 입력하세요">
+                        <button id="search-button">검색</button>
+                    </div>
+                    
+                    <table id="notice-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>카테고리</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>등록일</th>
+                                <th>답변상태</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notice-list">
+                            <!-- 동적으로 내용이 삽입될 부분 -->
+                        </tbody>
+                    </table>
+                    <button id="new-question-btn">새 게시글 작성</button>
+                    <div class="pagination">
+                        <button id="prev-page"><</button>
+                        <span id="page-numbers"></span>
+                        <button id="next-page">></button>
+                    </div>
+                    
+                    <!-- 게시글 작성 폼 -->
+                    <div id="question-form" class="question-form" style="display: none;">
+                        <h2>새 게시글 작성</h2>
+                        <label for="new-question-category">카테고리:</label>
+                        <select id="new-question-category">
+                            <option value="1">카테고리 1</option>
+                            <option value="2">카테고리 2</option>
+                            <option value="3">카테고리 3</option>
+                            <!-- 추가 카테고리를 여기에 추가 -->
+                        </select>
+                        <label for="new-question-title">제목:</label>
+                        <input type="text" id="new-question-title">
+                        <label for="new-question-content">내용:</label>
+                        <textarea id="new-question-content"></textarea>
+                        <button id="submit-question">작성 완료</button>
+                        <button id="cancel-question">취소</button>
+                    </div>
+            
+                    <!-- 상세 내용 표시 -->
+                    <div id="notice-detail" class="notice-detail" style="display: none;">
+                        <h2 id="detail-title"></h2>
+                        <p><strong>작성자:</strong> <span id="detail-writer"></span></p>
+                        <p><strong>작성일:</strong> <span id="detail-date"></span></p>
+                        <p id="detail-content"></p>
+                        <div id="answer-section"></div>
+                        <div id="admin-response-form" style="display: none;">
+                            <textarea id="response-content" placeholder="답변 내용을 입력하세요"></textarea>
+                            <button id="submit-response">답변 제출</button>
+                        </div>
+                        <button id="delete-question" style="display: none;">게시글 삭제</button>
+                        <button id="edit-question" style="display: none;">수정하기</button>
+                        <button id="back-to-list">목록</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+    <script defer src="/js/lms_qa.js"></script>
+    <script defer src="/js/common.js"></script>
+ </body>
+</html>

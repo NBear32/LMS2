@@ -2,6 +2,7 @@ package com.dw.lms.service;
 
 import com.dw.lms.model.User;
 import com.dw.lms.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

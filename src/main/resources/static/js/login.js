@@ -10,28 +10,6 @@ let signupPassword = "";
 let signupUserName = "";
 let signupEmail = "";
 
-// 각 페이지별 #header와 #footer에 html파일 넣기
-function loadHtml() {
-  axios
-    .get("header.html")
-    .then((response) => {
-      document.getElementById("header").innerHTML = response.data;
-    })
-    .catch((error) => {
-      console.error("Header loading error:", error);
-    });
-  axios
-    .get("footer.html")
-    .then((response) => {
-      document.getElementById("footer").innerHTML = response.data;
-    })
-    .catch((error) => {
-      console.error("footer loading error:", error);
-    });
-}
-// 페이지가 로드될 때 header와 footer를 로드
-window.onload = loadHtml;
-
 /* login-box */
 /* input 이벤트를 사용 */
 document.querySelector("#userID").addEventListener("change", (e) => {
@@ -55,11 +33,12 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
     .post(urlLogin, data, { withCredentials: true })
     .then((response) => {
       console.log("로그인 데이터: ", response.data);
-      sessionCurrent();
+      //sessionCurrent();
+      window.location.href = "main.html";
     })
     .catch((error) => {
       console.log("로그인 에러 발생: ", error);
-      alert("잘못된 정보입니다.");
+      alert("탈퇴 회원이거나, 잘못된 로그인 정보입니다.");
     });
 });
 
@@ -148,9 +127,9 @@ document
     document.querySelector(".signup-box").classList.add("hidden"); // 회원가입 box 안보이도록
   });
 
-/* 로그아웃 */
+  /* 로그아웃 */
 document.querySelector(".logoutBtn").addEventListener("click", () => {
-  if (confirm("로그아웃 하시겠습니까?")) {
+  // if (confirm("로그아웃 하시겠습니까?")) {
     axios
       .post(urlLogout, {}, { withCredentials: true })
       .then((response) => {
@@ -158,12 +137,25 @@ document.querySelector(".logoutBtn").addEventListener("click", () => {
         if (response.status == 200) {
           document.querySelector(".login-box").classList.remove("hidden");
           document.querySelector(".user-box").classList.add("hidden");
+          window.location.href = "main.html";
         }
       })
       .catch((error) => {
         console.log("에러 발생: ", error);
       });
-  }
+  // }
+});
+
+/* 입장 */
+document.querySelector('.connectBtn').addEventListener('click', function() {
+  // 페이지 이동을 위한 URL 설정
+  var url = 'main.html'; // main.html로 이동
+  
+  // 현재 창에서 페이지를 열기
+  window.location.href = url;
+  
+  // 혹은 새로운 탭에서 열기
+  // window.open(url, '_blank');
 });
 
 /* 세션확인 */
@@ -178,7 +170,9 @@ function sessionCurrent() {
           document.querySelector(".login-box").classList.add("hidden");
           document.querySelector(".user-box").classList.remove("hidden");
           document.querySelector(".user-box p").textContent =
-            response.data.userId + "님, 환영합니다.";
+            "로그아웃 하시겠습니까?";
+            //response.data.userId + "님, 환영합니다.";
+          //window.location.href = "main.html";
         }
       }
     })

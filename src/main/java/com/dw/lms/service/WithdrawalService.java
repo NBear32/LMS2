@@ -2,18 +2,16 @@ package com.dw.lms.service;
 
 import com.dw.lms.model.Withdrawal;
 import com.dw.lms.repository.WithdrawalRepository;
-import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
+@Transactional
 public class WithdrawalService {
     @Autowired
     private WithdrawalRepository withdrawalRepository;
@@ -26,6 +24,7 @@ public class WithdrawalService {
     private EntityManager entityManager;
 
     public String saveWithdrawal(Withdrawal withdrawal) {
+
         //withdrawal.setWithdrawalDate(LocalDateTime.now().toLocalDate()); // 현재일자
         //withdrawal.setSysDate(LocalDateTime.now()); // 현재일시
         //withdrawal.setUpdDate(LocalDateTime.now()); // 현재일시

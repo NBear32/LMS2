@@ -32,102 +32,6 @@ img {
   border: none;
 }
 
-.root {
-  width: 80%;
-  margin: 0 auto;
-}
-/* .header {
-  width: 100%;
-  height: 100px;
-  border-bottom: 1px solid #333333;
-  box-sizing: border-box;
-}
-.wrap {
-  width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-}
-.header h1 {
-  float: left;
-  width: 400px;
-  height: 100%;
-  padding-top: 27px;
-  box-sizing: border-box;
-}
-.headerLoginBtn {
-  width: 100px;
-  height: 40px;
-  padding: 10px 20px;
-  background-color: dodgerblue;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  line-height: 35px;
-  border-radius: 15px;
-  cursor: pointer;
-} */
-/* gnb */
-/* .gnb {
-  float: right;
-  width: 750px;
-  height: 100%;
-}
-.gnb > ul > li {
-  float: left;
-  width: 150px;
-  height: 94px;
-  line-height: 94px;
-  text-align: center;
-
-  position: relative;
-}
-.gnb .mainnav {
-  font-size: 18px;
-  font-weight: bold;
-  color: #666;
-}
-.gnb li .mainnav:hover {
-  color: #333333;
-} */
-
-/* footer */
-/* .footer {
-  width: 100%;
-  height: 100px;
-  background-color: #333333;
-}
-.footer h1 {
-  float: left;
-  width: 400px;
-  height: 100px;
-  padding-top: 30px;
-  box-sizing: border-box;
-}
-.footer p {
-  float: left;
-  width: 400px;
-  height: 100px;
-  line-height: 100px;
-  color: #fff;
-  text-align: center;
-}
-.snsnav {
-  float: right;
-  width: 400px;
-  height: 100px;
-  line-height: 100px;
-}
-.snsnav ul {
-  float: right;
-}
-.snsnav li {
-  float: left;
-  margin: 0 10px;
-}
-.snsnav a {
-  color: #fff;
-} */
-
 /*
 rem 단위 => 루트(html 태그)의 폰트 사이즈 대비 비율
             (1rem = 16px, 2rem = 32px, 0.5rem = 8px)
@@ -137,11 +41,11 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
 */
 
 /* 컨테이너 클래스 */
-/* .container {
+.container {
   width: 70%;
   margin: 0 auto;
   border: 1px solid black;
-} */
+}
 
 /* 타이틀 클래스 */
 .title {
@@ -167,25 +71,6 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
   display: flex;
   justify-content: start; /* 보통 왼쪽에 붙임 */
   align-items: center;
-}
-
-/* 컨텐츠 클래스 */
-.content {
-  width: 100%;
-  /* height: 500px; */
-  background-color: khaki;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 25px 3%;
-  padding: 20px 30px;
-}
-
-.userInfoPage, .userEducationPage {
-  width: 100%;
-  /* height: 500px; */
-  background-color: khaki;
-  padding: 20px;
 }
 
 /* 교재 안에 고급선택자 부분 설명, > 는 자식, 없으면 자손 */
@@ -232,19 +117,6 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
 /* 이미지 클래스 */
 .image {
   width: 100%;
-}
-
-/* 컨텐츠 자손 p */
-.content p {
-  /* 자손 */
-  margin: 5px;
-  text-align: left;
-}
-
-.lectureName {
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-align: center !important;
 }
 
 /* 프로덕트 클래스 */
@@ -340,24 +212,10 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
   margin: 0 auto; /* 위아래 0, 좌우 가운데 */
 }
 
-.userDataUpdate{
-  width: 100px;
-  height: 40px;
-  background-color: dodgerblue;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  line-height: 35px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 30px 30px auto; /* 위아래 0, 좌우 가운데 */
-}
-
 .loginBtn:hover,
 .logoutBtn:hover,
 .purchaseBtn:hover,
-.cartBtn.hover,
-.userDataUpdate:hover {
+.cartBtn.hover {
   background-color: lightblue;
   color: dodgerblue;
 }

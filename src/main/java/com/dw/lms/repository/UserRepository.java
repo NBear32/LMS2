@@ -6,5 +6,5 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, String> {
     Optional<User> findByUserId(String userID);
-    Optional<User> findByUserNameKor(String userName); 
+    Optional<User> findByUserNameKor(String userName); // findByUserName 에서 findByUserNameKor 로 변경
 }

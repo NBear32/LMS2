@@ -19,6 +19,7 @@
 .root {
   width: 80%;
   margin: 0 auto;
+  padding: 30px;
 }
 
 h3 {
@@ -94,6 +95,11 @@ h3 {
 .content p {
   margin: 0 0 5px 10px;
   font-size: 13px;
+}
+.lectureTitle {
+  font-weight: 1000;
+  font-size: 15px;
+  margin: 0 0 5px 10px;
 }
 
 .lecture > img {

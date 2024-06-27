@@ -1,0 +1,72 @@
+/* 한글폰트 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 전체적용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+
+.root {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  font-size: 18px;
+  height: 750px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.search-box {
+  margin-top: 30px;
+}
+
+.search {
+  margin: 10px 0px 5px 15px;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+
+.search.label {
+  margin-left: 0px;
+  border: 1px solid black;
+}
+
+.table-container {
+  margin-top: 10px;
+}
+
+.pagination-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}

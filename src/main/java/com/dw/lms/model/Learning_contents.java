@@ -32,6 +32,12 @@ public class Learning_contents {
     @Column(name = "learning_playtime", length = 6)
     private String learningPlaytime;
 
+    @Column(name = "learning_video_path", length = 255)
+    private String learningVideo_path;
+
+    @Column(name = "learning_pdf_path", length = 255)
+    private String learningPdf_path;
+
     @Column(name = "sys_date", updatable = false)
     private LocalDateTime sysDate;
 

@@ -33,7 +33,10 @@ public class Learning_review {
     @Column(name = "learning_review_score")
     private Long learningReviewScore;
 
-    @Column(name = "learning_review_content", length = 255)
+    @Column(name = "learning_review_title", length = 100)
+    private String learningReviewTitle;
+
+    @Column(name = "learning_review_content", length = 1500)
     private String learningReviewContent;
 
     @Column(name = "sys_date", updatable = false)

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS 이벤트</title>
+    <link rel="stylesheet" href="/css/lms_events.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+            <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+            <div class="root">
+            <!-- <header>
+                <img src="../static/images/logo.png" alt="Logo">
+                <nav>
+                    <a href="#">상세조회</a>
+                    <a href="#">장바구니</a>
+                    <a href="#">마이페이지</a>
+                    <a href="#">커뮤니티</a>
+                    <button id="login-btn">로그인</button>
+                </nav>
+            </header> -->
+            <div class="content">
+                <aside>
+                    <ul>
+                        <li><a href="lms_notices.html">공지사항</a></li>
+                        <li><a href="lms_qa.html">질의응답</a></li>
+                        <li><a href="lms_events.html" class="active">이벤트</a></li>
+                    </ul>
+                </aside>
+                <main>
+                    <h1>이벤트</h1>
+                    <div id="events" class="events"></div>
+                    <div class="pagination">
+                        <button id="prev-page">&lt;</button>
+                        <span id="page-numbers"></span>
+                        <button id="next-page">&gt;</button>
+                    </div>
+                </main>
+            </div>
+            <!-- <footer>
+                <p>강의 사이트</p>
+                <p>이러닝학습문의: 041-5800-4500</p>
+                <p>LMS분양기관및 K-디지털 문의: 041-580-4502</p>
+                <p>서비스이용약관</p>
+                <p>개인정보처리방침</p>
+                <p>이메일무단수집거부</p>
+                <p>Copyright Korea University of Technology and Education. All rights reserved.</p>
+            </footer> -->
+            </div>
+        <div id="footer"></div>
+    </div>
+    
+    <script defer src="/js/lms_events.js"></script>
+    <script defer src="/js/common.js"></script>
+</body>
+</html>

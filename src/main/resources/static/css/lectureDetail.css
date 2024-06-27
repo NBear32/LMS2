@@ -1,0 +1,244 @@
+/* 한글폰트 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* 공용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 여기부터 */
+.root {
+  width: 85%;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.side-box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 130px 30px 30px 30px;
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.sidebar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.sidebar p {
+  text-align: center;
+  padding: 5px;
+}
+
+.lectureName {
+  font-size: 30px;
+  margin: 0px;
+  font-weight: 700;
+}
+
+.introduction {
+  width: 100%;
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.lectureImg {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.lectureImg > img {
+  width: 100%;
+  height: 100%;
+}
+
+.lectureText {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0px;
+  font-weight: 700;
+}
+
+.lectureText > ul {
+  margin-top: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.lectureText > ul > li {
+  display: flex;
+  align-items: center;
+  min-height: 41px;
+  padding-left: 10px;
+}
+
+.label span {
+  display: inline-block;
+  width: 90px;
+}
+
+.databox span {
+  color: #666666;
+}
+
+.button-box {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+}
+.cartBtn {
+  background-color: #317abe;
+  color: white;
+  text-align: center;
+  margin-right: 5px;
+  height: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+.classBtn {
+  background-color: #317abe;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  height: 35px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.lectureBody {
+  width: 100%;
+}
+
+.titleBtn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  margin-top: 30px;
+}
+.detailBtn {
+  background-color: #666666;
+  padding: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.detailBtn > span {
+  color: #fff;
+}
+
+.detailText {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 1000;
+  color: blue;
+  margin-bottom: 5px;
+}
+
+.substance {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.lineHeight {
+  line-height: 200%;
+}
+table {
+  width: 100%;
+}
+.num {
+  width: 10%;
+  text-align: center;
+}
+.seq {
+  text-align: center;
+}
+td {
+  padding: 5px;
+}
+
+.review-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+}
+.reviewText {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.review-box > ul > li {
+  float: left;
+  margin-bottom: 10px;
+}
+.newest {
+  padding-right: 5px;
+}
+.asterion {
+  padding-left: 5px;
+}
+.division {
+  padding: 0 1px 0 1px;
+}
+.studyBtn {
+  background-color: #317abe;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  height: 35px;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.curser {
+  cursor: pointer;
+}
+
+.option {
+  background-color: white;
+  font-weight: 1000;
+  border: 2px solid blue;
+}
+
+.option > span {
+  color: black;
+}
+
+.hidden {
+  display: none;
+}

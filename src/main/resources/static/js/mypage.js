@@ -10,16 +10,18 @@ axios.get(urlCurrent)
     const authorityArray = response.data.authority;
     const authorityName = authorityArray[0].authority;
     if (authorityName === "ROLE_ADMIN") {
-      console.log("authority 처리 Start!!!");
-      const sideBtnAdmin = document.getElementById('sideBtnAdmin');
-      sideBtnAdmin.className = "sideBtn";
-      console.log("authority 처리 End!!!");
+        console.log("authority 처리 Start!!!");
+        const sideBtnAdmin = document.getElementById('sideBtnAdmin');
+        sideBtnAdmin.className = "sideBtn";
+        console.log("authority 처리 End!!!");
     }
 
     displayUser("http://localhost:8080/user/id/" + response.data.userId);
   })
   .catch((error) => {
     console.log("에러 발생: ", error);
+    alert("로그인해주세요.");
+    window.location.href = "http://localhost:8080/lms/main.html";
   });
 
 function loadHtml() {

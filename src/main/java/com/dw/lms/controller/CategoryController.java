@@ -1,7 +1,6 @@
 package com.dw.lms.controller;
 
 import com.dw.lms.model.Category;
-import com.dw.lms.repository.CategoryRepository;
 import com.dw.lms.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

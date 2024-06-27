@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/sub_navBox.css" />
+        <link rel="stylesheet" href="/css/pagination.css" />
+        <link rel="stylesheet" href="/css/mgmt_enrollment.css" />
+
+        <title>관리자 Dashboard</title>
+
+        <!-- header 에 넣는 이유는 body 에서 사용해야 되기 때문에 미리 로드해야 함 -->
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+                <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+            <div class="root">
+                <div class="content">
+                    <!-- 왼쪽메뉴 -->
+                    <nav class="sub_navBox">
+                        <p class="nav_tit">관리자 메뉴</p>
+                        <div class="sub_navBoxIn">
+                            <div class="content_wrap">
+                                <ul class="sub_nav">
+                                    <li class='no_sub'>
+                                        <a href="mgmt_user.html">
+                                            <span>회원관리</span>
+                                        </a>
+                                    </li>
+                                    <li class="no_sub">
+                                        <a href="mgmt_lecture.html">
+                                            <span>강의관리</span>
+                                        </a>
+                                    </li>
+                                    <li class="active open ">
+                                        <a href="mgmt_enrollment.html">
+                                            <span>수강관리</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="main-content">
+                        <div class="main-top">
+                            <div class="search-box">
+                                <label class="search label">수강조회</label>
+                                <input type="text" class="search input" placeholder="Search by Name">
+                                <button class="search button">조회</button>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>회원ID</th>
+                                            <th>회원Name</th>
+                                            <th>회원Email</th>
+                                            <th>회원여부(탈퇴:N)</th>
+                                            <th>수강강의수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="user_list">
+                                        <!-- <tr>
+                                            <td>1</td>
+                                            <td>John Doe</td>
+                                            <td>johndoe@example.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Jane Smith</td>
+                                            <td>janesmith@example.com</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="pagination-container">
+                            <div class="prev-button">이전</div>
+                            <div class="number-button-wrapper"><button class="number-button">1</button></div>
+                            <div class="next-button">이후</div>
+                        </div>
+                    </div> <!-- main-content 종료 -->
+                </div> <!-- content 종료 -->
+                <script src="/js/mgmt_enrollment.js"></script>
+            </div> <!-- root 종료 -->
+            <div id="footer"></div>
+        </div> <!-- container 종료 -->
+        <script defer src="/js/common.js"></script>
+    </body>
+</html>

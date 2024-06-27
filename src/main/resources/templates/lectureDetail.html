@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/lectureDetail.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
+    <!-- Google 폰트 => Poppins Embed code 사용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>LMS</title>
+    <!-- header 에 넣는 이유는 body 에서 사용해야 되기 때문에 미리 로드해야 함 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+          <div class="header">
+      <div class="wrap">
+        <h1>
+          <a href="main.html">
+            <img src="/image/logo.png" alt="로고위치" />
+          </a>
+        </h1>
+        <div class="gnb">
+          <ul>
+            <li>
+              <a href="lecture.html" class="mainnav">상세조회</a>
+            </li>
+            <li>
+              <a href="cart.html" class="mainnav">장바구니</a>
+            </li>
+            <li>
+              <a href="mypage.html" class="mainnav">마이페이지</a>
+            </li>
+            <li>
+              <a href="lms_notices.html" class="mainnav">커뮤니티</a>
+            </li>
+            <li>
+              <a href="login.html" id="login" class="mainnav">로그인</a>
+              <a href="login.html" id="logout" class="mainnav hidden">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div class="content">
+        <div class="mainTitle"></div>
+        <div class="introduction">
+          <div class="lectureImg"></div>
+          <div class="lectureText">
+            <div class="titleName"></div>
+            <ul>
+              <li>
+                <div class="label"><span>제목</span></div>
+                <div class="databox1"></div>
+              </li>
+              <li>
+                <div class="label"><span>교육내용</span></div>
+                <div class="databox2"></div>
+              </li>
+              <li>
+                <div class="label"><span>신청기간</span></div>
+                <div class="databox3"></div>
+              </li>
+              <li>
+                <div class="label"><span>교육비</span></div>
+                <div class="databox4"></div>
+              </li>
+            </ul>
+            <div class="button-box">
+              <div class="cartBtn">장바구니</div>
+              <div class="classBtn">수강신청</div>
+            </div>
+            <div class="studyBtn hidden">학습하기</div>
+          </div>
+        </div>
+        <div class="titleBtn">
+          <div class="detailBtn btn1 option" onclick="btnClick1()">
+            <span>과정소개</span>
+          </div>
+          <div class="detailBtn btn2" onclick="btnClick2()">
+            <span>학습목차</span>
+          </div>
+          <div class="detailBtn btn3" onclick="btnClick3()">
+            <span>강사소개</span>
+          </div>
+          <div class="detailBtn btn4" onclick="btnClick4()">
+            <span>교재정보</span>
+          </div>
+        </div>
+        <!-- 과정소개  -->
+        <div class="lectureBody body1">
+          <div class="detailText"></div>
+        </div>
+        <!-- 학습목차  -->
+        <div class="lectureBody body2 hidden">
+          <div class="detailText">
+            <table class="detailTable">
+              <tr>
+                <th class="num">순번</th>
+                <th>목차</th>
+              </tr>
+              <tr></tr>
+            </table>
+          </div>
+        </div>
+        <!-- 강사소개  -->
+        <div class="lectureBody body3 hidden">
+          <div class="detailText teacher">
+            <p class="name">강사 정보</p>
+          </div>
+        </div>
+        <!--  교재정보  -->
+        <div class="lectureBody body4 hidden">
+          <div class="detailText textbook">
+            <p class="name">교제 정보</p>
+          </div>
+        </div>
+        <div class="review-box">
+          <p class="reviewText">강의 후기</p>
+          <ul class="reviewUl">
+            <li class="newest">최신순</li>
+            <li class="division">|</li>
+            <li class="asterion">별점순</li>
+          </ul>
+          <table class="reviewTable">
+            <colgroup>
+              <col width="5%" />
+              <col width="65%" />
+              <col width="15%" />
+              <col width="15%" />
+            </colgroup>
+            <tr>
+              <th>순번</th>
+              <th>제목</th>
+              <th>등록일</th>
+              <th>평점</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div id="footer"></div>
+    </div>
+    <script src="/js/lectureDetail.js"></script>
+    <script defer src="/js/common.js"></script>
+  </body>
+</html>
